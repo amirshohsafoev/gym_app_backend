@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  base_reps: 1
+  base_sets: 1
+  base_weight: 1
+  picture1_url: MyString
+  picture2_url: MyString
+  part_of_the_body: one
+
+two:
+  base_reps: 1
+  base_sets: 1
+  base_weight: 1
+  picture1_url: MyString
+  picture2_url: MyString
+  part_of_the_body: two
