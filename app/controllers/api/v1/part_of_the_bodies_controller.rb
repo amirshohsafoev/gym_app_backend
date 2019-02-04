@@ -1,4 +1,5 @@
-class Api::V1::PartsOfTheBodyController < ApplicationController
+class Api::V1::PartOfTheBodiesController < ApplicationController
+  skip_before_action :authorized, only: [:index]
   def index
     @parts = PartOfTheBody.all
     render json: @parts

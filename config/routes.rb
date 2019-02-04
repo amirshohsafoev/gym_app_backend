@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :update, :destroy]
       resources :user_exercises, only: [:index, :create, :update, :destroy]
       resources :exercises, only: [:index]
-      resources :parts_of_the_body, only: [:index]
+      resources :part_of_the_bodies, only: [:index]
       resources :days_body, only: [:index, :create, :update, :destroy]
       resources :days, only: [:index, :create, :update, :destroy]
       resources :schedules, only: [:index, :create, :update, :destroy]

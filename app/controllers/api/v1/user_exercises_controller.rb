@@ -1,4 +1,5 @@
 class Api::V1::UserExercisesController < ApplicationController
+  skip_before_action :authorized, only: [:index]
   def index
     @user_exercises = UserExercise.all
     render json: @user_exercises
@@ -28,5 +29,5 @@ class Api::V1::UserExercisesController < ApplicationController
   end
   def find_user_exercise
     @user_exercise = UserExercise.find(params[:id])
-  end 
+  end
 end
