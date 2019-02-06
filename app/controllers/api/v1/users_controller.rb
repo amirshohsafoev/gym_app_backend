@@ -11,23 +11,15 @@ class Api::V1::UsersController < ApplicationController
 end
 
 def create
-  params.require(:user).permit(
-    :first_name,
-    :last_name,
-    :picture_url,
-     :email,
-     :age,
-     :weight,
-     :height,
-     :password_digest)
-  @user = User.create(first_name: params[:first_name],
-    last_name: params[:last_name],
-    picture_url: params[:picture_url],
-    email: params[:email],
-    age: params[:age],
-    weight: params[:weight],
-    height: params[:height],
-    password_digest: params[:password_digest])
+  @user = User.create(user_params)
+  # (first_name: params[:first_name],
+  #   last_name: params[:last_name],
+  #   picture_url: params[:picture_url],
+  #   email: params[:email],
+  #   age: params[:age],
+  #   weight: params[:weight],
+  #   height: params[:height],
+  #   password_digest: params[:password_digest])
   if @user.valid?
     @token = JWT.encode({password_digest: @user.password_digest}, 'mYw3bT0K3n')
     render json: { user: @user, jwt: @token }, status: :created

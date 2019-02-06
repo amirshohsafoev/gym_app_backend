@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create, :update, :destroy]
+      # get '/current_user', to: 'auth#show'
+      post '/login', to: 'auth#create'
       resources :user_exercises, only: [:index, :create, :update, :destroy]
       resources :exercises, only: [:index]
       resources :part_of_the_bodies, only: [:index]

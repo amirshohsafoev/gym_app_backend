@@ -4,4 +4,5 @@ class User < ApplicationRecord
   has_many :schedules, dependent: :destroy
   has_many :days, through: :schedules
   has_many :part_of_the_bodies, through: :exercises
+  has_secure_password 
 end

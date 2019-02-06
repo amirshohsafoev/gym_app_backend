@@ -3,9 +3,9 @@ class Api::V1::AuthController < ApplicationController
 
     def create
       # byebug
-      @user = User.find_by(username: user_login_params[:username])
+      @user = User.find_by(email: user_login_params[:email])
       if @user && @user.authenticate(user_login_params[:password])
-        @token = JWT.encode({ username: @user.username }, 'ja2siDc3kJ')
+        @token = JWT.encode({ email: @user.email }, 'mYw3bT0K3n')
         # @token = encode_token({ user_id: @user.id })
         render json: { user: UserSerializer.new(@user), jwt: @token }, status: :accepted
       else
@@ -16,6 +16,6 @@ class Api::V1::AuthController < ApplicationController
     private
 
     def user_login_params
-      params.require(:auth).permit(:username, :password)
+      params.require(:auth).permit(:password, :email)
     end
 end

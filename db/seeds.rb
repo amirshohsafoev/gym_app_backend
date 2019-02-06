@@ -13,19 +13,23 @@ bob = User.create(email:"boby@gmail.com", first_name: 'bob',last_name: 'boby', p
 s%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F378800000185757087%2F7e436842e9e0c26e0ef36796161060e5_400x400.jpeg&imgrefu
 rl=https%3A%2F%2Ftwitter.com%2Ffsbigbob&docid=ETPK-ciZbMZ-lM&tbnid=0EqX-9kumHYH6M%3A&vet=10ahUKEwi0oYuKx5jgAhUExoMKHS
 hzD5MQMwhGKAwwDA..i&w=400&h=400&bih=1112&biw=2133&q=bob&ved=0ahUKEwi0oYuKx5jgAhUExoMKHShzD5MQMwhGKAwwDA&iact=mrc&uact
-=8', age: 30, weight: 320, height: '7 feet 5 in',  password_digest: "encryptedstuff")
+=8', age: 30, weight: 320, height: '7 feet 5 in',  password: "encryptedstuff")
 
 
 
-chest = PartOfTheBody.create(body_name: "Chest", picture_url: "https://i.pinimg.com/originals/20/08/e3/2008e3218d914487fd636c273a0b4f3b.jpg")
+chest = PartOfTheBody.create(body_name: "Chest", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/chest_0.jpg")
 
-leg = PartOfTheBody.create(body_name: "Leg", picture_url: "https://muscularstrength.com/uploads/froala/dd2f63873053f43bc5829b400f2b2d8847ccc4ce.jpg")
+leg = PartOfTheBody.create(body_name: "Leg", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/quads_1.jpg")
 
-shoulder = PartOfTheBody.create(body_name: "Shoulder", picture_url: "https://i0.wp.com/mgfitlife.com/wp-content/uploads/2017/08/upper-back-muscles.jpg?ssl=1")
+shoulder = PartOfTheBody.create(body_name: "Shoulder", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/shoulders_0.jpg")
 
-abs = PartOfTheBody.create(body_name: "Abs", picture_url: "http://www.intrainingsports.com/img/articles/anatomy-abs.png")
+abs = PartOfTheBody.create(body_name: "Abs", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/abs_0.jpg")
 
-back = PartOfTheBody.create(body_name: "Back", picture_url: "https://img03.rl0.ru/6a6285e37447bbf4b714eb0f9fff3704/c615x400/news.rambler.ru/img/2018/09/11150343.932917.9630.jpeg")
+back = PartOfTheBody.create(body_name: "Back", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/upperback.jpg")
+
+triceps = PartOfTheBody.create(body_name: "Triceps", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/triceps_0.jpg")
+
+biceps = PartOfTheBody.create(body_name: "Biceps", picture_url: "https://cdn.muscleandstrength.com/sites/default/files/taxonomy/image/videos/biceps_0.jpg")
 
 barberllBenchPress = machineFly = Exercise.create(
 exercise_name: "Barbell bench press",
