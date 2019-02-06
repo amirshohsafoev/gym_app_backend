@@ -11,17 +11,11 @@ class Api::V1::UsersController < ApplicationController
 end
 
 def create
-  @user = User.create(user_params)
-  # (first_name: params[:first_name],
-  #   last_name: params[:last_name],
-  #   picture_url: params[:picture_url],
-  #   email: params[:email],
-  #   age: params[:age],
-  #   weight: params[:weight],
-  #   height: params[:height],
-  #   password_digest: params[:password_digest])
+  # byebug
+  @user = User.create(first_name: params[:first_name],last_name: params[:last_name],picture_url: params[:picture_url],email: params[:email],age: params[:age],weight: params[:weight],height: params[:height],password: params[:password])
+  # (user_params)
   if @user.valid?
-    @token = JWT.encode({password_digest: @user.password_digest}, 'mYw3bT0K3n')
+    @token = JWT.encode({password: @user.password}, 'mYw3bT0K3n')
     render json: { user: @user, jwt: @token }, status: :created
   else
     render json: { error: 'failed to create user' }, status: :not_acceptable
@@ -54,7 +48,7 @@ end
        :age,
        :weight,
        :height,
-       :password_digest)
+       :password)
   end
   def find_user
     @user = User.find(params[:id])
