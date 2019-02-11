@@ -18,7 +18,7 @@ class Api::V1::UserExercisesController < ApplicationController
   end
 
   private
-  def eser_xercise_params
+  def user_exercise_params
     params.require(:user_exrcise).permit(
       :reps,
       :sets,

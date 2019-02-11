@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   before_action :authorized
 
   def issue_token(payload)
-    JWT.encode(payload, 'ja2siDc3kJ')
+    JWT.encode(payload, 'mYw3bT0K3n')
   end
 
   def auth_header
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::API
     if auth_header
       token = auth_header
       begin
-        JWT.decode(token, 'ja2siDc3kJ', true, algorithm: 'HS256')
+        JWT.decode(token, 'mYw3bT0K3n', true, algorithm: 'HS256')
       rescue JWT::DecodeError
         nil
       end
@@ -22,8 +22,8 @@ class ApplicationController < ActionController::API
 
   def current_user
     if decoded_token
-      username = decoded_token[0]['username']
-      @user = User.find_by(username: username)
+      user_id = decoded_token[0]['user_id']
+      @user = User.find(user_id)
     else
       nil
     end
@@ -34,6 +34,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorized
+    # byebug
     if !logged_in?
       render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
     end

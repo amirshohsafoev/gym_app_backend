@@ -6,6 +6,11 @@ class Api::V1::UsersController < ApplicationController
     @users = User.all
     render json: @users
   end
+  def show
+    # byebug
+    @user = User.find(params[:id])
+    render json: @user
+  end
   def profile
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
 end
@@ -15,7 +20,7 @@ def create
   @user = User.create(first_name: params[:first_name],last_name: params[:last_name],picture_url: params[:picture_url],email: params[:email],age: params[:age],weight: params[:weight],height: params[:height],password: params[:password])
   # (user_params)
   if @user.valid?
-    @token = JWT.encode({password: @user.password}, 'mYw3bT0K3n')
+    @token = JWT.encode({user_id: @user.user.id}, 'mYw3bT0K3n')
     render json: { user: @user, jwt: @token }, status: :created
   else
     render json: { error: 'failed to create user' }, status: :not_acceptable
