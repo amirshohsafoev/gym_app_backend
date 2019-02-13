@@ -7,13 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 PartOfTheBody.destroy_all
+UserExercise.destroy_all
 
-
-bob = User.create(email:"boby@gmail.com", first_name: 'bob',last_name: 'boby', picture_url: 'https://www.google.com/imgres?imgurl=http
-s%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F378800000185757087%2F7e436842e9e0c26e0ef36796161060e5_400x400.jpeg&imgrefu
-rl=https%3A%2F%2Ftwitter.com%2Ffsbigbob&docid=ETPK-ciZbMZ-lM&tbnid=0EqX-9kumHYH6M%3A&vet=10ahUKEwi0oYuKx5jgAhUExoMKHS
-hzD5MQMwhGKAwwDA..i&w=400&h=400&bih=1112&biw=2133&q=bob&ved=0ahUKEwi0oYuKx5jgAhUExoMKHShzD5MQMwhGKAwwDA&iact=mrc&uact
-=8', age: 30, weight: 320, height: '7 feet 5 in',  password: "encryptedstuff")
+bob = User.create(email:"boby@gmail.com", first_name: 'bob',last_name: 'boby', picture_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPNxXxQ0xzsZw7xYo6gttyvSxRLE7fe5TxbF-duOMi_GpRjDLHtQ', age: 30, weight: 320, height: '7 feet 5 in',  password: "encryptedstuff")
 
 
 
@@ -92,4 +88,5 @@ picture2_url: "http://3.bp.blogspot.com/-z3TZUpRk4go/UmkuvVPNfoI/AAAAAAAAAYk/yCt
 part_of_the_body_id: shoulder.id )
 
 machine = UserExercise.create(reps: 10, sets: 5, weight: 40, user_id: bob.id, exercise_id: machineFly.id)
+userLegPress = UserExercise.create(reps: 10, sets: 5, weight: 40, user_id: bob.id, exercise_id: legPress.id)
 puts("done!")
