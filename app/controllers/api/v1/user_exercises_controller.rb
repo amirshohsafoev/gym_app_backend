@@ -6,7 +6,8 @@ class Api::V1::UserExercisesController < ApplicationController
     render json: @user_exercises
   end
   def create
-    @user_exercise = UserExercise.new(user_exercise_params)
+    # byebug
+    @user_exercise = UserExercise.create(user_exercise_params)
     render json: @user_exercise
   end
   def update
